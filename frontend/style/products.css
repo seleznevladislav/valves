@@ -100,7 +100,7 @@ h2{
 	100% {transform: translateY(0);}
 }
 ::placeholder {
-	color: white;
+	color: var(--primary__color);
 	font-size: 16px;
 }
 .search__block {
@@ -108,7 +108,7 @@ h2{
 }
 .search {width: 500px; display: inline-block; text-align: center;}
 .search form {
-  background: #a9a3a3;
+  background: var(--secondary__light_color);
   border-bottom: 4px solid var(--secondary__color);
 }
 .search input, .search button {
@@ -116,7 +116,8 @@ h2{
   outline: none;
   background: transparent;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: 700;
+	color: var(--primary__color);
 }
 .search input {
   width: 85%;
