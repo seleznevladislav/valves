@@ -71,6 +71,10 @@ a {
 a:hover {
 	color: var(--secondary__color);
 }
+li img {
+	height: 15px;
+	padding-right: 5px;
+}
 main {
 	display: flex;
 	flex-direction: column;
@@ -156,4 +160,12 @@ h2{
 .collection {
 	display: flex;
 	justify-content: space-between;
+}
+.transition-fade {
+  transition: .5s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
 }

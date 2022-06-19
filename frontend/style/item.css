@@ -40,7 +40,7 @@ header {
 	display: flex;
 	gap: 100px;
 	height: 100%;
-	padding-right: 100px;
+	padding-right: 300px;
 }
 .menu{
 	padding-top: 20px;
@@ -72,6 +72,10 @@ a {
 }
 a:hover {
 	color: var(--secondary__color);
+}
+li img {
+	height: 15px;
+	padding-right: 5px;
 }
 .information {
 	display: flex;
@@ -185,4 +189,13 @@ h2 {
 	width: 150px;
 	height: 70px;
 	border: 3px dashed var(--secondary__color);
+}
+.transition-fade {
+  transition: .5s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+	transform: translateY(100px);
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./img/logo.png">
+	<link rel="stylesheet" href="./style/form.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<title>Valves</title>
+</head>
+<body>
+	<header>
+		<div class="header__logo">
+			<img src="./img/logo.png" alt="logo" class="logo">
+			<span class="span__logo">Valves</span>
+		</div>
+		<ul class="header__menu">
+			<li class="menu"><a href="./index.html" class="menu__link">Главная</a></li>
+			<li class="menu"><a href="./products.html" class="menu__link">Продукция</a></li>
+			<li class="menu"><a href="#" class="menu__link">О компнаии</a></li>
+			<li class="menu"><a href="./form.html" class="menu__link"><img src="./img/add.svg" alt="add"> Добавить</a></li>
+		</ul>
+		<div class="header__contacts">
+			<img src="./img/logoGit.png" alt="git logo" class="git">
+			<a class="a__git" href="https://github.com/seleznovladislav/valves">seleznevladislav</a>
+		</div>
+		</header>
+		<main >
+			<form action="" method="POST"  enctype="multipart/form-data">
+				<h2>Карточка товара</h2>
+				<div class="desc">
+					<label for="name">Имя товара</label><input type="text" id="name" placeholder="Клапан обратный" required> 
+					<label for="figure">Фигура товара</label><input type="text" class="figure" placeholder="19с53нж" required>
+					<p>Описание товара</p><textarea class="description big" placeholder="Для каких целей..."></textarea>
+				</div>
+				<div class="temperature">
+					<div class="temp_work">
+						<p>Температура рабочей среды</p>
+						<label for="work_t_from">От<input type="number" class="work_t_from" required></label>
+						<label for="work_t_to">До<input type="number" class="work_t_to" required></label>
+					</div>
+					<div class="temp_world">
+						<p>Температура окружающей среды</p>
+						<label for="world_t_from">От<input type="number" class="world_t_from" required></label>
+						<label for="world_t_to">До<input type="number" class="world_t_to" required></label>
+					</div>
+				</div>
+				<div class="addition">
+					<label for="environments">Рабочие среды</label><input type="text" class="environments" placeholder="Пар, газ..." required>
+					<label for="GOST">ГОСТ</label><input type="text" class="GOST" placeholder="15150-69" required>
+					<label for="drive">Привод</label><input type="text" class="drive" required>
+					<label for="presure">Наминальное давление</label><input type="number" class="presure" required>
+				</div>
+				<div class="file send">
+					<input type="file" name="avatar" id="selectFileButton" accept=".jpg,.jpeg,.png">
+					<label for="selectFileButton" class="selectFileButton-label">
+						Добавить фотографию клапана
+						<img src="./img/pictures.svg" alt="img">
+					</label>
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</main>
+</body>
+</html>
