@@ -196,7 +196,7 @@ h2{
 	height: 100%;
 	transition: all .7s ease-in-out;
 	opacity: 0;
-	transform: scale(1.2);
+	transform: scale(1.2) translateY(+15%);
 }
 .slide img {
 	height: 100%;
@@ -231,17 +231,17 @@ input[type="radio"]{
 #r1:checked ~ .s1{
 	margin-left: 0;
 	opacity: 1;
-	transform: scale(1);
+	transform: scale(1) translateY(0);
 }
 #r2:checked ~ .s1{
 	margin-left: -25%;
 }
-#r2:checked ~ .s2{ opacity: 1; transform: scale(1);}
+#r2:checked ~ .s2{ opacity: 1; transform: scale(1) translateY(0);}
 #r3:checked ~ .s1{
 	margin-left: -50%;
 }
-#r3:checked ~ .s3{ opacity: 1; transform: scale(1);}
+#r3:checked ~ .s3{ opacity: 1; transform: scale(1) translateY(0);}
 #r4:checked ~ .s1{
 	margin-left: -75%;
 }
-#r4:checked ~ .s4{ opacity: 1; transform: scale(1);}
+#r4:checked ~ .s4{ opacity: 1; transform: scale(1) translateY(0);}
