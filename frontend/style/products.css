@@ -11,6 +11,7 @@ body {
 	background-color: var(--primary__color);
 	font-family: 'Montserrat', sans-serif;
 	font-family: 'Oswald', sans-serif;
+	font-size: 16px;
 }
 header {
  display: flex;
@@ -138,26 +139,109 @@ h2{
 	margin-top: 7px;
   width: 30px;
 }
+.collection {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+}
 .item {
-	width: 370px;
-	height: 100px;
+	max-width: 19vw;
+	max-height: 270px;
 	cursor: pointer;
 	transition: .2s;
+	overflow: hidden;
 }
 .item:hover {
 	transform: scale(1.02);
 }
 .item p {
 	color: var(--secondary__color);
-	font-size: 24px;
+	font-size: 1.3em;
 	font-weight: 600;
 	letter-spacing: 1px;
 	padding-top: 10px;
+	animation: ani .7s forwards;
+	animation-delay: var(--ip);
+	transform: translateY(+150%);
+}
+.item div {
+	height: 370;
+	overflow: hidden;
 }
 .item img {
 	width: 100%;
+	animation: ani 1.4s forwards;
+	animation-delay: var(--i);
+	transform: translateY(+150%);
 }
-.collection {
+/* index.html */
+.image {
+	position: absolute;
+	height: calc(100vh - 70px);
+	width: 45vw;
+	right: 0;
+	overflow: hidden;
+}
+.slides{
 	display: flex;
-	justify-content: space-between;
+	width: 400%;
+	position: relative;
+	height: 100%;
+	right: 50px;
+	background-color: var(--primary__color);
+	overflow: hidden;
 }
+.slide{
+	width: 25%;
+	height: 100%;
+	transition: all .7s ease-in-out;
+	opacity: 0;
+	transform: scale(1.2);
+}
+.slide img {
+	height: 100%;
+	width: 100%;
+}
+
+.navigation{
+	position: absolute;
+	left: 50px;
+	top: 150px;
+	display: flex;
+	flex-direction: column;
+}
+.bar{
+	font-size: 18px;
+	font-weight: 400;
+	padding: 8px 0px 0px 10px;
+	letter-spacing: 1px;
+	margin: 6px;
+	cursor: pointer;
+	opacity: .6;
+	transition: .3s;
+}
+.bar:hover{
+	opacity: .8;
+	transform: scale(1.01);
+}
+input[type="radio"]{
+	position: absolute;
+	visibility: hidden;
+}
+#r1:checked ~ .s1{
+	margin-left: 0;
+	opacity: 1;
+	transform: scale(1);
+}
+#r2:checked ~ .s1{
+	margin-left: -25%;
+}
+#r2:checked ~ .s2{ opacity: 1; transform: scale(1);}
+#r3:checked ~ .s1{
+	margin-left: -50%;
+}
+#r3:checked ~ .s3{ opacity: 1; transform: scale(1);}
+#r4:checked ~ .s1{
+	margin-left: -75%;
+}
+#r4:checked ~ .s4{ opacity: 1; transform: scale(1);}

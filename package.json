@@ -1,0 +1,27 @@
+{
+  "name": "valves",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seleznovladislav/valves.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seleznovladislav/valves/issues"
+  },
+  "homepage": "https://github.com/seleznovladislav/valves#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7"
+  }
+}
