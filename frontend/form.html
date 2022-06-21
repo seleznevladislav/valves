@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="./img/logo.png">
-	<link rel="stylesheet" href="./style/form.css">
+	<link rel="stylesheet" href="./style/products.css">
 	<link rel="stylesheet" href="style/swap.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,39 +31,43 @@
 		</header>
 		<main id="swup" class="transition-fade">
 			<form action="" method="POST"  enctype="multipart/form-data">
-				<h2>Карточка товара</h2>
-				<div class="desc">
-					<label for="name">Имя товара</label><input type="text" id="name" placeholder="Клапан обратный" required> 
-					<label for="figure">Фигура товара</label><input type="text" class="figure" placeholder="19с53нж" required>
-					<p>Описание товара</p><textarea class="description big" placeholder="Для каких целей..."></textarea>
-				</div>
-				<div class="temperature">
-					<div class="temp_work">
-						<p>Температура рабочей среды</p>
-						<label for="work_t_from">От<input type="number" class="work_t_from" required></label>
-						<label for="work_t_to">До<input type="number" class="work_t_to" required></label>
+				<div class="form_div">
+					<h2>Карточка товара</h2>
+					<div class="desc">
+						<label for="name">Имя товара</label><input type="text" id="name" placeholder="Клапан обратный" required> 
+						<label for="figure">Фигура товара</label><input type="text" class="figure" placeholder="19с53нж" required>
+						<p>Описание товара</p><textarea class="description big" placeholder="Для каких целей..."></textarea>
 					</div>
-					<div class="temp_world">
-						<p>Температура окружающей среды</p>
-						<label for="world_t_from">От<input type="number" class="world_t_from" required></label>
-						<label for="world_t_to">До<input type="number" class="world_t_to" required></label>
+					<div class="temperature">
+						<div class="temp_work">
+							<p>Температура рабочей среды</p>
+							<label for="work_t_from">От<input type="number" class="work_t_from" required></label>
+							<label for="work_t_to">До<input type="number" class="work_t_to" required></label>
+						</div>
+						<div class="temp_world">
+							<p>Температура окружающей среды</p>
+							<label for="world_t_from">От<input type="number" class="world_t_from" required></label>
+							<label for="world_t_to">До<input type="number" class="world_t_to" required></label>
+						</div>
 					</div>
-				</div>
-				<div class="addition">
-					<label for="environments">Рабочие среды</label><input type="text" class="environments" placeholder="Пар, газ..." required>
-					<label for="GOST">ГОСТ</label><input type="text" class="GOST" placeholder="15150-69" required>
-					<label for="drive">Привод</label><input type="text" class="drive" required>
-					<label for="presure">Наминальное давление</label><input type="number" class="presure" required>
-				</div>
-				<div class="file send">
-					<input type="file" name="avatar" id="selectFileButton" accept=".jpg,.jpeg,.png">
-					<label for="selectFileButton" class="selectFileButton-label">
-						Добавить фотографию клапана
-						<img src="./img/pictures.svg" alt="img">
-					</label>
-					<input type="submit" value="Отправить">
-				</div>
+					<div class="addition">
+						<label for="environments">Рабочие среды</label><input type="text" class="environments" placeholder="Пар, газ..." required>
+						<label for="GOST">ГОСТ</label><input type="text" class="GOST" placeholder="15150-69" required>
+						<label for="drive">Привод</label><input type="text" class="drive" required>
+						<label for="presure">Наминальное давление</label><input type="number" class="presure" required>
+					</div>
+					<div class="file send">
+						<input type="file" name="avatar" id="selectFileButton" accept=".jpg,.jpeg,.png">
+						<label for="selectFileButton" class="selectFileButton-label">
+							Добавить фотографию клапана
+							<img src="./img/pictures.svg" alt="img">
+						</label>
+						<input type="submit" value="Отправить">
+					</div>
+			</div>
 			</form>
 		</main>
+
+		<script src="./scripts/swup.min.js"></script>  
 </body>
 </html>

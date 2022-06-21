@@ -1,8 +1,13 @@
-const bar = document.querySelectorAll('.bar')	
-const radio = document.querySelectorAll('input')
-const title = document.querySelector('.h1')
-const numbers = document.querySelector('.n1') 
-function animationMain() {
+const swup = new Swup({});
+
+
+function init() {
+
+	const bar = document.querySelectorAll('.bar')	
+	const radio = document.querySelectorAll('input')
+	const title = document.querySelector('.h1')
+	const numbers = document.querySelector('.n1') 
+
 	const arr = Array.from(radio)
 	let i = 0
 	let memory
@@ -32,5 +37,9 @@ function animationMain() {
  	})(i);
 	}
 }
-animationMain()
+init()
+
+swup.on('contentReplaced', init)
+
+
 

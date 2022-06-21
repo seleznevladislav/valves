@@ -105,7 +105,7 @@ h2{
 	100% {transform: translateY(0);}
 }
 ::placeholder {
-	color: var(--primary__color);
+	color: var(--form__color);
 	font-size: 16px;
 }
 .search__block {
@@ -301,7 +301,7 @@ h2{
 	height: 25%;
 	transition: .5s ease-in-out;
 }
-input[type="radio"]{
+.slides input[type="radio"]{
 	position: absolute;
 	visibility: hidden;
 }
@@ -323,3 +323,118 @@ input[type="radio"]{
 }
 #r4:checked ~ .s4{ opacity: 1; transform: scale(1) translateY(0);}
 
+/* form.js */
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 60%;
+	margin: auto;
+	padding: 8vh 20% 0 20%;
+}
+form h2 {
+	text-align: center;
+
+}
+form input, textarea {
+	max-width: 40%;
+	height: 25px;
+	font-size: 18px;
+	color: var(--secondary__color);
+	border: 1px solid var(--secondary__color);
+	margin-top: 10px;
+	margin-right: 30px;
+	padding: 1px;
+}
+form p {
+	font-size: 18px;
+}
+.form_div {
+	background-color: var(--secondary__light_color);
+	padding: 10px;
+	border: 5%;
+}
+.desc {
+	padding: 20px 0 20px 40px;
+}
+.temperature {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0 20px 40px;
+	border-top: 7px solid var(--secondary__color);
+
+}
+.addition, .file, .send {
+	padding: 20px 0 20px 40px;
+	border-top: 7px solid var(--secondary__color);
+}
+.temperature input {
+	width: 400px;
+}
+.temp_work, .temp_world{
+	display: flex;
+	flex-direction: column;
+}
+.temp_work input, .temp_world input{
+	margin-left: 10px;
+}
+.send {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+form label {
+	font-size: 18px;
+	padding-top: 20px;
+	margin: 0 10px 0 0;
+}
+.big {
+	width: 100%;
+	height: 100px;
+}
+.presure {
+	width: 145px;
+}
+#selectFileButton{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+}
+.selectFileButton-label{
+	background-color: var(--form__color);
+	border-radius: 3px;
+	border: 2px solid var(--secondary__color);
+	color: var(--form__color);
+	font-size: 16px;
+	font-weight: 400; 
+	padding: 10px 27px 10px 27px;
+	cursor: pointer;
+	transition: .5s;
+}
+.selectFileButton-label:hover {
+	background-color: #3b3b3b99;
+	border: 2px solid var(--secondary__light_color);
+	color: var(--primary__color);
+}
+.selectFileButton-label img {
+	width: 18px;
+	margin-left: 15px;
+}
+input[type="submit"] {
+	background-color: #3352a199;
+	border-radius: 3px;
+	border: 2px solid var(--secondary__light_color);
+	color: var(--primary__color);
+	font-size: 16px;
+	font-weight: bold; 
+	width: 250px;
+	height: 46px;
+	cursor: pointer;
+	transition: .5s;
+}
+input[type="submit"]:hover {
+	background-color: var(--primary__color);
+	border: 2px solid #3352a199;
+	color: var(--secondary__color);
+}
