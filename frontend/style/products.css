@@ -187,14 +187,14 @@ h2{
 	width: 400%;
 	position: relative;
 	height: 100%;
-	right: 50px;
+	/* right: 50px; */
 	background-color: var(--primary__color);
 	overflow: hidden;
 }
 .slide{
 	width: 25%;
 	height: 100%;
-	transition: all .7s ease-in-out;
+	transition: all .8s ease-in-out;
 	opacity: 0;
 	transform: scale(1.2) translateY(+15%);
 }
@@ -207,49 +207,51 @@ h2{
 	100% {opacity: 1; transform: translateX(0);}
 }
 .slide img {
-	height: 100%;
 	width: 100%;
+	height: 100%;
+	object-fit: none;	
+	
 }
-
 .navigation{
 	position: absolute;
+	z-index: 4;
 	left: 5vw;
 	top: 150px;
 	display: flex;
 	flex-direction: column;
 }
-.bar{
-	font-size: 18px;
+.bar {
+	padding-top: 8px;
+	transform: translateY(+150%);
+	opacity: 0;
+	animation: bars_ani .6s forwards;
+	animation-delay: var(--i);
+ }
+.bar label{
+	font-size: 16px;
 	font-weight: 400;
-	padding: 8px 0px 0px 0px;
 	letter-spacing: 1px;
 	margin: 6px;
 	cursor: pointer;
 	opacity: .6;
 	transition: .3s;
-	transform: translateY(-150%);
-	opacity: 0;
-	animation: bars_ani .6s forwards;
 	animation-delay: 100ms;
 }
-@keyframes bars_ani {
-	0% {transform: translateY(-150%); opacity: 0;}
-	100% {transform: translateY(0); opacity: .6;}
-}
-.bar:nth-child(1) {
+.bar:hover label {
 	opacity: 1;
-	font-size: 1.1em;
-} 
-.bar:hover{
-	opacity: .8;
-	transform: scale(1.01);
+}
+.active { opacity: 1; }
+
+@keyframes bars_ani {
+	0% {transform: translateY(+150%); opacity: 0;}
+	100% {transform: translateY(0);opacity: 1; }
 }
 .titles {
 	position: absolute;
 	left: 5vw;
 	bottom: 30vh;
 	display: flex;
-	width: 37vw;
+	width: 41vw;
 	height: 160px;
 	overflow: hidden;
 }
@@ -259,12 +261,13 @@ h2{
 .title > div {
 	font-size: 50px;
 	text-transform: uppercase;
+	/* letter-spacing: 1px; */
 	font-weight: bold;
 	height: 25%;
-	transition: .5s ease-in-out;
+	transition: .6s ease-in-out;
 	transform: translateY(+150%);
 	animation: title_ani .8s forwards;
-	animation-delay: 160ms;
+	animation-delay: 400ms;
 }
 @keyframes title_ani {
 	0% {transform: translateY(+150%);}
@@ -325,18 +328,23 @@ h2{
 
 /* form.js */
 
-form {
+#form {
+	margin-top: 5vh;
+}
+.form_div {
+	background-color: var(--secondary__light_color);
+	border: 5%;
 	display: flex;
 	flex-direction: column;
-	max-width: 60%;
+	max-width: 50%;
 	margin: auto;
-	padding: 8vh 20% 0 20%;
+	padding: 3vh 0 0 0;
 }
-form h2 {
+.form_div h2 {
 	text-align: center;
 
 }
-form input, textarea {
+.form_div input, textarea {
 	max-width: 40%;
 	height: 25px;
 	font-size: 18px;
@@ -346,13 +354,8 @@ form input, textarea {
 	margin-right: 30px;
 	padding: 1px;
 }
-form p {
+.form_div p {
 	font-size: 18px;
-}
-.form_div {
-	background-color: var(--secondary__light_color);
-	padding: 10px;
-	border: 5%;
 }
 .desc {
 	padding: 20px 0 20px 40px;
