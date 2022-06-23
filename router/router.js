@@ -13,8 +13,7 @@ router.post("/add", (req, res) => {
 router.get('/add', async (req, res) => {
 	let { data: Item, error } = await supabase
   .from('Item')
-  .select()
-	.match('{1}')
+  .select("*")
 	res.send(Item)
 })
 export default router

@@ -146,7 +146,7 @@ h2{
 }
 .item {
 	max-width: 19vw;
-	max-height: 270px;
+	max-height: 272px;
 	cursor: pointer;
 	transition: .2s;
 	overflow: hidden;
@@ -240,7 +240,7 @@ h2{
 .bar:hover label {
 	opacity: 1;
 }
-.active { opacity: 1; }
+.active label{ opacity: 1; }
 
 @keyframes bars_ani {
 	0% {transform: translateY(+150%); opacity: 0;}
@@ -336,7 +336,7 @@ h2{
 	border: 5%;
 	display: flex;
 	flex-direction: column;
-	max-width: 50%;
+	max-width: 60%;
 	margin: auto;
 	padding: 3vh 0 0 0;
 }

@@ -154,7 +154,7 @@ h2 {
 	color: var(--secondary__light_color);
 }
 .information__full {
-	padding-top: 19vh;
+	padding-top: 16vh;
 	width: 100%;
 }
 .information__open {
@@ -165,7 +165,7 @@ h2 {
 	height: 50px;
 	border-bottom: 1px solid var(--secondary__light_color);
 	font-size: 24px;
-	padding-top: 20px;
+	padding-top: 8px;
 	cursor: pointer;
 }
 .open {
@@ -204,7 +204,8 @@ h2 {
 .open > a {
 	padding: 20px;
 	box-sizing: border-box;
-	width: 150px;
+	max-width: 160spx;
 	height: 70px;
+	margin-right: 10px;
 	border: 3px dashed var(--secondary__color);
 }
