@@ -30,44 +30,45 @@
 		</div>
 		</header>
 		<main id="swup" class="transition-fade">
-			<form action="" method="POST"  enctype="multipart/form-data" id="form">	
+			<form action="/photo" method="POST"  enctype="multipart/form-data" id="form">	
 				<div class="form_div">
 					<h2>Карточка товара</h2>
 					<div class="desc">
-						<label for="name">Имя товара</label><input type="text" id="name" placeholder="Клапан обратный" required> 
-						<label for="figure">Фигура товара</label><input type="text" class="figure" placeholder="19с53нж" required>
-						<p>Описание товара</p><textarea class="description big" placeholder="Для каких целей..."></textarea>
+						<label for="name">Имя товара</label><input type="text" id="name" name="name" placeholder="Клапан обратный" required> 
+						<label for="figure">Фигура товара</label><input type="text" name="figure" class="figure" placeholder="19с53нж" required>
+						<p>Описание товара</p><textarea class="description big" name="description" placeholder="Для каких целей..."></textarea>
 					</div>
 					<div class="temperature">
 						<div class="temp_work">
 							<p>Температура рабочей среды</p>
-							<label for="work_t_from">От<input type="number" class="work_t_from" required></label>
-							<label for="work_t_to">До<input type="number" class="work_t_to" required></label>
+							<label for="work_t_from">От<input type="number" class="work_t_from" ></label>
+							<label for="work_t_to">До<input type="number" class="work_t_to" ></label>
 						</div>
 						<div class="temp_world">
 							<p>Температура окружающей среды</p>
-							<label for="world_t_from">От<input type="number" class="world_t_from" required></label>
-							<label for="world_t_to">До<input type="number" class="world_t_to" required></label>
+							<label for="world_t_from">От<input type="number" class="world_t_from" ></label>
+							<label for="world_t_to">До<input type="number" class="world_t_to" ></label>
 						</div>
 					</div>
 					<div class="addition">
-						<label for="environments">Рабочие среды</label><input type="text" class="environments" placeholder="Пар, газ..." required>
-						<label for="GOST">ГОСТ</label><input type="text" class="GOST" placeholder="15150-69" required>
-						<label for="drive">Привод</label><input type="text" class="drive" required>
-						<label for="presure">Наминальное давление</label><input type="number" class="presure" required>
+						<label for="environments">Рабочие среды</label><input type="text" class="environments" placeholder="Пар, газ..." >
+						<label for="GOST">ГОСТ</label><input type="text" class="GOST" placeholder="15150-69" >
+						<label for="drive">Привод</label><input type="text" class="drive" >
+						<label for="presure">Наминальное давление</label><input type="number" class="presure">
 					</div>
 					<div class="file send">
-						<input type="file" name="avatar" id="selectFileButton" accept=".jpg,.jpeg,.png">
+						<input type="file" name="photo" id="selectFileButton" accept=".jpg,.jpeg,.png">
 						<label for="selectFileButton" class="selectFileButton-label">
 							Добавить фотографию клапана
 							<img src="./img/pictures.svg" alt="img">
 						</label>
-						<input type="submit" value="Отправить">
+						<input type="submit" class="sendBtn" value="Отправить">
 					</div>
 			</div>
 			</form>
 		</main>
 
-		<script src="./scripts/swup.min.js"></script>  
+		<script src="./scripts/swup.min.js"></script>
+		<!-- <script src="./scripts/form.js"></script>   -->
 </body>
 </html>

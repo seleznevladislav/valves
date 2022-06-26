@@ -13,10 +13,23 @@ const addItem = async item => {
 	}
 }
 
-const getModel = async () => {
+const addPhoto = async photo => {
 	try {
 			const {data, error} = await supabase
-					.from('models')
+					.from('Photo')
+					.insert(photo)
+
+			if (error) throw error
+			return data
+	} catch (e) {
+			throw e
+	}
+}
+
+const getItems = async () => {
+	try {
+			const {data, error} = await supabase
+					.from('Item')
 					.select('*');
 					
 			if (error) throw error
@@ -29,5 +42,6 @@ const getModel = async () => {
 
 export default {
 	addItem,
-	getModel
+	getItems, 
+	addPhoto
 }
