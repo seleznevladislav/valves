@@ -24,8 +24,11 @@ const addItem = async (req, res, next) => {
 
 const getItems = async (req, res, next) => {
 	try {
-			const data = await Service.getItems();
+			const data = await Service.getItems()
+			// const photos = await Service.getPhotos()
 			res.send(data)
+			// res.send(photos)
+
 			next();
 	} catch(e) {
 			console.error(e);
