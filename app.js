@@ -11,7 +11,9 @@ const __dirname = path.resolve(path.dirname(''));
 app.use(cors());
 app.use(express.static(path.resolve(__dirname, 'frontend')))
 app.use(express.json( { extended: true }));
+app.use(express.urlencoded( {extended: false}))
 app.use(Router);
+
 
 
 app.listen(PORT, () => {

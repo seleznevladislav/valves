@@ -1,4 +1,4 @@
-const swup = new Swup({});
+// const swup = new Swup({});
 
 function init() {
 
@@ -86,4 +86,4 @@ function init() {
 }
 init()
 
-swup.on('contentReplaced', init)
+// swup.on('contentReplaced', init)

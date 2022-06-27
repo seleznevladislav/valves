@@ -12,6 +12,9 @@ router.post("/add", Controller.addItem)
 router.get('/add', Controller.getItems)
 // router.post('/photo', filter.uploadPhoto, Controller.addItem)
 router.post('/photo', filter.uploadPhoto, Controller.addItem)
+router.get('/products', async (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'frontend', 'products.html'))
+})
 
 
 export default router
