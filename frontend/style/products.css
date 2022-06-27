@@ -142,6 +142,7 @@ h2{
 .collection {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	height: 100%;
 }
 .item {
@@ -150,6 +151,7 @@ h2{
 	cursor: pointer;
 	transition: .2s;
 	overflow: hidden;
+	margin-bottom: 30px;
 }
 .item:hover {
 	transform: scale(1.02);
