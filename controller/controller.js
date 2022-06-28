@@ -36,7 +36,18 @@ const getItems = async (req, res, next) => {
 	}
 }
 
+const getEx = async (req, res, next) => {
+	try {
+		const data = await Service.getItem(req.body.id)
+		res.send(data)
+	} catch(e) {
+			console.error(e);
+			res.sendStatus(500);
+	}
+}
+
 export default {
 	addItem,
-	getItems
+	getItems, 
+	getEx
 }

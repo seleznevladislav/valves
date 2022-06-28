@@ -1,4 +1,4 @@
-	document.addEventListener("DOMContentLoaded", async ()=> {
+	document.addEventListener("DOMContentLoaded", ()=> {
 		fetch('/add', {method: "GET"})
 		.then((data)=>data.json())
 		.then((data)=> getItems(data))
@@ -16,11 +16,11 @@
 			itemBlock.classList.add('item');
 		
 			itemBlock.innerHTML = `
-			<a href="/item.html">
+			<a href="/item/${item.id}">
 				<div>
-					<img src="./img/${item.Photo[0].name}" alt="" style="--i:${item.id*100}ms">
+					<img src="./img/${item.Photo[0].name}" alt="" style="--i:$100ms">
 				</div>
-				<div><p class="item_name" style="--ip:${700 + item.id*100}ms">${item.name} ${item.figure}</p></div>
+				<div><p class="item_name" style="--ip:700ms">${item.name} ${item.figure}</p></div>
 			</a>
 
 			`;

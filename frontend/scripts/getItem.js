@@ -1,46 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="./img/logo.png">
-	<link rel="stylesheet" type="text/css" href="../style/item.css">
-	<link rel="stylesheet" href="../style/swap.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
-	<title>Valves</title>
-</head>
-<body>
-	<header>
-		<div class="header__logo">
-			<img src="../img/logo.png" alt="logo" class="logo">
-			<span class="span__logo">Valves</span>
-		</div>
-		<ul class="header__menu">
-			<li class="menu"><a href="/" class="menu__link">Главная</a></li>
-			<li class="menu"><a href="/products" class="menu__link">Продукция</a></li>
-			<li class="menu"><a href="#" class="menu__link">О компнаии</a></li>
-			<li class="menu"><a href="/form.html" class="menu__link"><img src="../img/add.svg" alt="add"> Добавить</a></li>
-		</ul>
-		<div class="header__contacts">
-			<img src="../img/logoGit.png" alt="git logo" class="git">
-			<a class="a__git" href="https://github.com/seleznovladislav/valves">seleznevladislav</a>
-		</div>
-		</header>
-		<main class="transition-fade">
-			<section class="information">
-			<!-- 	<div class="item">
+document.addEventListener('DOMContentLoaded', async () => {
+	
+	let index = document.URL.substring(document.URL.lastIndexOf('/') + 1)
+	const body={id: index};
+	let data = await request(`/item/${index}`, 'POST', body)
+	let info = await data.json()
+	let str = info[0].Photo[0].name
+	let indexDt = str.indexOf(".")
+	info[0].Photo[0].name = str.slice(0, indexDt)
+	console.log(info[0].Photo[0].name)
+	createItem(info[0])
+})
+
+function createItem(info){
+	const section = document.querySelector('.information')
+	section.innerHTML = `
+				<div class="item">
 					<div class="item__information">
 						<div>
-							<h2>Клапан обратный поворотный</h2>
+							<h2>${info.name}</h2>
 						</div>
 						<div class="item__information_description">
-							<span class="name">19с53нж</span>
-							<p id="visible">служит для защиты системы от обратного движения потока, выполняет предохранительную функцию
-								и является
-								автоматическим устройством, которое не нуждается в ручном управлении и настройках
+							<span class="name">${info.figure}</span>
+							<p id="visible">${info.description}
 							</p>
 							<ul id="hidden">
 								<li>19 — тип арматуры — затвор обратный</li>
@@ -110,11 +91,31 @@
 					</div>
 				</div>
 				<div class="item__logo">
-					<img src="../img/19c53nz_vertical.jpg" alt="19c53nz">
+					<img src="../img/${info.Photo[0].name}_vertical.jpg" alt="${info.Photo[0].name}">
 				</div> 
-			-->
-			</section>
-		</main>
-		<script src="../scripts/getItem.js"></script>
-</body>
-</html>
+	`
+}
+
+
+
+
+async function request(url , method='GET', data=null) {
+		try {
+			const headers={};
+			let body;
+			
+			if (data){
+				headers['Content-Type'] = 'application/json';
+				body = JSON.stringify(data);
+			}
+			console.log('req:', body);
+			const response = await fetch(url, {
+				method,
+				headers,
+				body
+			})
+			return await response;
+		} catch(e) {
+			console.warn(`Erorr: ${e.message}`);
+		}
+	}

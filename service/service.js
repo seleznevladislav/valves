@@ -39,6 +39,20 @@ const getItems = async () => {
 			throw e
 	}
 }
+const getItem = async (id) => {
+	try {
+			const {data, error} = await supabase
+					.from('Item')
+					.select('id, name, Photo (SRC, name), figure, description')
+					.match({id})
+
+				
+			if (error) throw error
+			return data
+	} catch (e) {
+			throw e
+	}
+}
 const getPhotos = async () => {
 	try {
 			const {data, error} = await supabase
@@ -57,5 +71,6 @@ export default {
 	addItem,
 	getItems, 
 	addPhoto,
-	getPhotos
+	getPhotos,
+	getItem
 }
