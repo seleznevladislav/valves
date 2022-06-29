@@ -53,7 +53,7 @@
 			`;
 
 			itemArray.append(itemBlock);
-			console.log(item);
+			// console.log(item);
 		})
 	}
 
@@ -67,7 +67,7 @@
 				headers['Content-Type'] = 'application/json';
 				body = JSON.stringify(data);
 			}
-			console.log('req:', body);
+			// console.log('req:', body);
 			const response = await fetch(url, {
 				method,
 				headers,

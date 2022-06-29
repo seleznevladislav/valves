@@ -1,8 +1,6 @@
 import { Router } from "express"
 import path from "path"
 import Controller from "../controller/controller.js"
-import service from '../service/service.js'
-import supabase from "../configs/dbConfig.js"
 import filter from '../middlewares/file.js'
 
 const __dirname = path.resolve(path.dirname(''))

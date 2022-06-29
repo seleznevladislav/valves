@@ -1,5 +1,4 @@
 import Service from '../service/service.js';
-import { v4 as uuidv4 } from 'uuid';
 const addItem = async (req, res, next) => {
 	const Item = {
 		name: req.body.name,
@@ -47,7 +46,15 @@ const getEx = async (req, res, next) => {
 }
 const getSearch = async (req, res, next) => {
 	const information = req.body
-	if ('type' in information) {
+	if (('type' in information) && ('name' in information)) {
+		try {
+			const data = await Service.getSearchNT(req.body)
+			res.send(data)
+		} catch(e) {
+				console.error(e);
+				res.sendStatus(500);
+		}
+	} else if ('type' in information) {
 		try {
 			const data = await Service.getSearchT(req.body.type)
 			res.send(data)
@@ -55,8 +62,7 @@ const getSearch = async (req, res, next) => {
 				console.error(e);
 				res.sendStatus(500);
 		}
-	}
-	if ('name' in information) {
+	} else if ('name' in information) {
 		try {
 			const data = await Service.getSearchN(req.body.name)
 			res.send(data)
