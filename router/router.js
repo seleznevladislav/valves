@@ -13,13 +13,15 @@ router
 	.get('/add', Controller.getItems)
 
 router.post('/photo', filter.uploadPhoto, Controller.addItem)
-router.get('/products', async (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'frontend', 'products.html'))
-})
+
 
 router
 			.get('/item/:id', (req, res) => {res.sendFile(path.resolve(__dirname, 'frontend', 'item.html'))})
 			.post('/item/:id', Controller.getEx)
+			.get('/products', async (req, res) => {
+				res.sendFile(path.resolve(__dirname, 'frontend', 'products.html'))
+			})
+router.post('/products', Controller.getSearch)
 
 
 export default router

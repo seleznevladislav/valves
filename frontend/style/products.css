@@ -105,36 +105,50 @@ h2{
 	100% {transform: translateY(0);}
 }
 ::placeholder {
-	color: var(--form__color);
+	color: black;
 	font-size: 16px;
 }
 .search__block {
 	height: 100%;
 }
-.search {width: 500px; display: inline-block; text-align: center;}
+.search {max-width: 800px; display: flex; height: 50px; border-bottom: 8px solid var(--secondary__color);}
 .search form {
   background: var(--secondary__light_color);
-  border-bottom: 4px solid var(--secondary__color);
+	height: 100%;
 }
 .search input, .search button {
   border: none;
+	
   outline: none;
   background: transparent;
 	font-size: 16px;
 	font-weight: 700;
 	color: var(--primary__color);
 }
+.search label{
+	margin-left: 10px;
+}
 .search input {
-  width: 85%;
-  height: 42px;
-  padding-left: 15px;
+   /* width: 85%; */
+	border-right: 3px solid black;
+  height: 100%; 
+  padding-left: 15px;  
+}
+.search select {
+	font-size: 14px;
+	margin-right: 10px;
+	border: none;
+	height: 70%;
+	background: transparent;
 }
 .search button {
-  height: 42px;
-  width: 11%;
+	border-left: 3px solid black;
+  height: 100%;
+  width: 50px; 
   cursor: pointer;
 }
 .search button img {
+
 	height: 18px;
 	margin-top: 7px;
   width: 30px;

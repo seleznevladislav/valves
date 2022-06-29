@@ -38,8 +38,16 @@
 			<h2>Продукция</h2>
 			<div class="search">
 				<form>
-					<input type="text" placeholder="Искать клапан">
-					<button type="submit"><img src="./img/arrow-right.svg" alt="arrow find"></button>
+					<input type="text" placeholder="Искать клапан" id="input">
+					<label for="type">Тип клапана:</label>
+                <select id="type" name="phone">
+									<option value="null">Не выбран</option>
+                    <option value="обратный">Обратный</option>
+                    <option value="игольчатый">Игольчатый</option>
+                    <option value="запорный">Запорный</option>
+                    <option value="отсечной">Отсечной</option>
+          </select>
+					<button type="submit" id="search"><img src="./img/arrow-right.svg" alt="arrow find"></button>
 				</form>
 			</div>
 		</div>
