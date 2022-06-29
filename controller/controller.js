@@ -46,12 +46,24 @@ const getEx = async (req, res, next) => {
 	}
 }
 const getSearch = async (req, res, next) => {
-	try {
-		const data = await Service.getSearch(req.body.name)
-		res.send(data)
-	} catch(e) {
-			console.error(e);
-			res.sendStatus(500);
+	const information = req.body
+	if ('type' in information) {
+		try {
+			const data = await Service.getSearchT(req.body.type)
+			res.send(data)
+		} catch(e) {
+				console.error(e);
+				res.sendStatus(500);
+		}
+	}
+	if ('name' in information) {
+		try {
+			const data = await Service.getSearchN(req.body.name)
+			res.send(data)
+		} catch(e) {
+				console.error(e);
+				res.sendStatus(500);
+		}
 	}
 }
 

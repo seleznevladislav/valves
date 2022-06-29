@@ -53,12 +53,25 @@ const getItem = async (id) => {
 			throw e
 	}
 }
-const getSearch = async (figure) => {
+const getSearchN = async (figure) => {
 	try {
 			const {data, error} = await supabase
 			.from('Item')
 			.select('id, name, Photo (SRC, name), figure')
 			.match({figure})
+				
+			if (error) throw error
+			return data
+	} catch (e) {
+			throw e
+	}
+}
+const getSearchT = async (name) => {
+	try {
+			const {data, error} = await supabase
+			.from('Item')
+			.select('id, name, Photo (SRC, name), figure')
+			.match({name})
 				
 			if (error) throw error
 			return data
@@ -86,5 +99,7 @@ export default {
 	addPhoto,
 	getPhotos,
 	getItem,
-	getSearch
+	getSearchN,
+	getSearchT,
+
 }

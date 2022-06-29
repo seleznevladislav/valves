@@ -17,7 +17,7 @@
 
 		const jsonReq = {}
 		if (inputName.value) jsonReq.name = inputName.value
-		if (inputType.value != 'null') jsonReq.type = inputType.value
+		if (inputType.value != 'null') jsonReq.type = `Клапан ${inputType.value}`
 
 		
 		if (("name" in jsonReq) || ("type" in jsonReq)) {
@@ -47,13 +47,13 @@
 				<div>
 					<img src="./img/${item.Photo[0].name}" alt="" style="--i:$100ms">
 				</div>
-				<div><p class="item_name" style="--ip:700ms">${item.name} ${item.figure}</p></div>
+				<div><p class="item_name" style="--ip:700ms;">${item.name} ${item.figure}</p></div>
 			</a>
 
 			`;
 
 			itemArray.append(itemBlock);
-			// console.log(item);
+			console.log(item);
 		})
 	}
 
