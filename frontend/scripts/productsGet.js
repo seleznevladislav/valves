@@ -31,11 +31,12 @@
 	function getItems(items) {
 		const itemArray = document.querySelector('.collection')
 
+		itemArray.innerHTML = ''
+
 		if (items[0] == undefined) {
 			console.log('пусто')
+			itemArray.innerHTML += `<h3 style='margin-left: .3vw;'>Ничего не найдено 404</h3>`
 		}
-
-		itemArray.innerHTML = ''
 
 		items.forEach((item) => {
 			const itemBlock = document.createElement('div');
