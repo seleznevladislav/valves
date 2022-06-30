@@ -111,7 +111,7 @@ h2{
 .search__block {
 	height: 100%;
 }
-.search {max-width: 800px; display: flex; height: 50px; border-bottom: 8px solid var(--secondary__color);}
+.search {max-width: 800px; display: flex; height: 50px; border-bottom: 8px solid var(--secondary__color); margin-right: 1%;}
 .search form {
   background: var(--secondary__light_color);
 	height: 100%;
@@ -165,10 +165,8 @@ h2{
 	transition: .2s;
 	overflow: hidden;
 	margin-bottom: 30px;
+	margin-right: .9%;
 }
-.item:not(:first-child) {
-	margin-left: 1.1%
-} 
 .item:hover {
 	transform: scale(1.02);
 }

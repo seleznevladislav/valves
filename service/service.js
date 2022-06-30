@@ -51,7 +51,8 @@ const getItem = async (id) => {
 					Specifications (*),
 					Item_Details (
 					Details ( datail_name, 
-					Materials (name_F)))`
+					Materials (name_F))),
+					Documents (name)`
 					)
 					.match({id})
 

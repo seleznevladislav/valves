@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 function createItem(info){
-	console.log(info.Item_Details[1].Details.Materials.name_F)
+	console.log(info)
 	const section = document.querySelector('.information')
 	section.innerHTML = `
 				<div class="item">
@@ -25,12 +25,12 @@ function createItem(info){
 							<p id="visible">${info.description}
 							</p>
 							<ul id="hidden">
-								<li>${info.Figure[0].figure_id ? info.Figure[0].figure_id: "" } — тип арматуры — ${info.type}</li>
-								<li>${info.Figure[0].Figure_Material[0].Materials.name_S ? info.Figure[0].Figure_Material[1].Materials.name_S : ''} 
-								— материал корпуса — ${info.Figure[0].Figure_Material[0].Materials.name_F ? info.Figure[0].Figure_Material[0].Materials.name_F : ''}</li>
-								<li>${info.Figure[0].figure_number ? info.Figure[0].figure_number : ""} — номер модели</li>
-								<li>${info.Figure[0].Figure_Material[1].Materials.name_S ? info.Figure[0].Figure_Material[1].Materials.name_S : ''} 
-								— материал уплотнения — ${info.Figure[0].Figure_Material[1].Materials.name_F ? info.Figure[0].Figure_Material[1].Materials.name_F : ""}</li>
+								<li>${info.Figure[0] ? info.Figure[0].figure_id: "" } — тип арматуры — ${info.type}</li>
+								<li>${info.Figure[0] ? info.Figure[0].Figure_Material[1].Materials.name_S : ''} 
+								— материал корпуса — ${info.Figure[0] ? info.Figure[0].Figure_Material[0].Materials.name_F : ''}</li>
+								<li>${info.Figure[0]  ? info.Figure[0].figure_number : ""} — номер модели</li>
+								<li>${info.Figure[0] ? info.Figure[0].Figure_Material[1].Materials.name_S : ''} 
+								— материал уплотнения — ${info.Figure[0] ? info.Figure[0].Figure_Material[1].Materials.name_F : ""}</li>
 							</ul>
 						</div>
 					</div>
@@ -41,13 +41,13 @@ function createItem(info){
 						</div>
 						<div class="open">
 							<ul>
-								<li>Температура рабочей среды: от ${info.Exploitation[0].temp_w_min} до + ${info.Exploitation[0].temp_w_max}°С;</li>
-								<li>Температура окружающей среды: от ${info.Exploitation[0].temp_e_min} до +${info.Exploitation[0].temp_e_max}°С;</li>
-								<li>Рабочая среда: ${info.Exploitation[0].environment ? info.Exploitation[0].environment : "пусто" };</li>
+								<li>Температура рабочей среды: от ${info.Exploitation[0] ? info.Exploitation[0].temp_w_min : ''} до + ${info.Exploitation[0] ? info.Exploitation[0].temp_w_max : ''}°С;</li>
+								<li>Температура окружающей среды: от ${info.Exploitation[0] ? info.Exploitation[0].temp_e_min : ''} до +${info.Exploitation[0] ? info.Exploitation[0].temp_e_max : ""}°С;</li>
+								<li>Рабочая среда: ${info.Exploitation[0] ? info.Exploitation[0].environment : "пусто" };</li>
 							</ul>
 							<ul>
 								<li>Климатическое исполнение и категория размещения по ГОСТ 15150-69;</li>
-								<li>Направление потока среды: ${info.Exploitation[0].direction};</li>
+								<li>Направление потока среды: ${info.Exploitation[0] ? info.Exploitation[0].direction : ''};</li>
 							</ul>
 						</div>
 						<div class="information__open" tabindex="2">
@@ -56,13 +56,13 @@ function createItem(info){
 						</div>
 						<div class="open">
 							<ul>
-								<li>Привод: ${info.Specifications[0].drive};</li>
-								<li>Номинальное давление PN, МПа (кгс/см²): ${info.Specifications[0].pressure} (${info.Specifications[0].pressure*10});</li>
+								<li>Привод: ${info.Specifications[0] ? info.Specifications[0].drive : ''};</li>
+								<li>Номинальное давление PN, МПа (кгс/см²): ${info.Specifications[0] ? info.Specifications[0].pressure : ''} (${info.Specifications[0] ? info.Specifications[0].pressure*10 : ''});</li>
 								<li>Таблица-фигура: ${info.figure};</li>
 							</ul>
 							<ul>
-								<li>Условные диаметры, мм: ${info.Specifications[0].diameters};</li>
-								<li>Регламентирующий документ: ${info.Specifications[0].document};</li>
+								<li>Условные диаметры, мм: ${info.Specifications[0]? info.Specifications[0].diameters : ''};</li>
+								<li>Регламентирующий документ: ${info.Specifications[0] ? info.Specifications[0].document : ''};</li>
 							</ul>
 						</div>
 						<div class="information__open" tabindex="3">
@@ -85,7 +85,7 @@ function createItem(info){
 							<img src="../img/arrow-down.svg" alt="arrow down">
 						</div>
 						<div class="open">
-							<a href="../docs/19c53нж.pdf" download="">Паспорт клапана</a>
+							<a href="../docs/${info.Documents[0] ? info.Documents[0].name : '*'}.pdf" download="">Паспорт клапана</a>
 							<a href="../docs/ГОСТ33423_2015.pdf" download="">ГОСТ 33423-2015</a>
 						</div>
 					</div>
