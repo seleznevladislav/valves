@@ -43,7 +43,16 @@ const getItem = async (id) => {
 	try {
 			const {data, error} = await supabase
 					.from('Item')
-					.select('id, name, Photo (SRC, name), figure, description')
+					.select(`id, name, Photo (SRC, name), figure, description, type,
+					Figure (figure_number, figure_id, 
+					Figure_Material (
+					Materials (name_S, name_F))),
+					Exploitation (*),
+					Specifications (*),
+					Item_Details (
+					Details ( datail_name, 
+					Materials (name_F)))`
+					)
 					.match({id})
 
 				
